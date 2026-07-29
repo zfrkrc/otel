@@ -1,0 +1,21 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Sezonsal Fiyatlama</h2>
+<form method="POST" action="/pricing/new" style="display:flex;gap:8px;flex-wrap:wrap;background:#fff;padding:16px;border-radius:8px;margin-bottom:20px">
+  <select name="room_type_id" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+    {% for t in types %}<option value="{{ t.id }}">{{ t.name }} ({{ t.base_price }}TL)</option>{% endfor %}
+  </select>
+  <input type="text" name="name" placeholder="Sezon adi" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="date" name="date_from" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="date" name="date_to" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="number" name="price" placeholder="Fiyat" step="0.01" required style="padding:8px;border:1px solid #ddd;border-radius:4px;width:100px">
+  <button type="submit" class="btn btn-primary" style="width:auto">Ekle</button>
+</form>
+<div style="background:#fff;border-radius:8px;padding:16px">
+  <table><tr><th>Oda Tipi</th><th>Sezon</th><th>Baslangic</th><th>Bitis</th><th>Fiyat</th><th></th></tr>
+    {% for p in prices %}
+    <tr><td>{{ p.room_type.name if p.room_type else '-' }}</td><td>{{ p.name or '-' }}</td><td>{{ p.date_from }}</td><td>{{ p.date_to }}</td><td>{{ p.price }}TL</td>
+    <td><form method="POST" action="/pricing/{{ p.id }}/delete" style="display:inline"><button style="background:none;border:none;color:#c62828;cursor:pointer">Sil</button></form></td></tr>
+    {% else %}<tr><td colspan="6" class="empty">Sezonsal fiyat yok</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

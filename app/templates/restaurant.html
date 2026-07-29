@@ -1,0 +1,42 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Mutfak & Restoran</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+  <div class="card">
+    <h3 style="margin-bottom:12px">Menuye Ekle</h3>
+    <form method="POST" action="/restaurant/menu/add" style="display:flex;gap:8px;flex-wrap:wrap">
+      <input type="text" name="name" placeholder="Urun Adi" required style="flex:1;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <input type="number" name="price" placeholder="Fiyat" step="0.01" required style="width:100px;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <select name="category" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+        <option value="">Kategori</option><option value="kahvalti">Kahvalti</option>
+        <option value="oglen">Oglen</option><option value="aksam">Aksam</option>
+        <option value="icecek">Icecek</option><option value="atistirmalik">Atistirmalik</option>
+      </select>
+      <button type="submit" class="btn btn-primary" style="width:auto">Ekle</button>
+    </form>
+    <h3 style="margin:16px 0 8px">Menu</h3>
+    <table><tr><th>Urun</th><th>Kategori</th><th>Fiyat</th><th>Durum</th><th></th></tr>
+    {% for m in menu %}<tr><td>{{ m.name }}</td><td>{{ m.category or '-' }}</td><td>{{ m.price }}TL</td>
+    <td><span class="badge badge-{{ 'green' if m.available else 'red' }}">{{ 'Aktif' if m.available else 'Pasif' }}</span></td>
+    <td><form method="POST" action="/restaurant/menu/{{ m.id }}/toggle" style="display:inline"><button style="padding:4px 8px;background:#f0f0f0;border:none;border-radius:4px;cursor:pointer">{% if m.available %}Devre Disi{% else %}Aktifles{% endif %}</button></form></td></tr>
+    {% else %}<tr><td colspan="5" class="empty">Menude urun yok</td></tr>{% endfor %}</table>
+  </div>
+  <div class="card">
+    <h3 style="margin-bottom:12px">Siparis Ver</h3>
+    <form method="POST" action="/restaurant/order/new" style="display:flex;flex-direction:column;gap:8px">
+      <select name="room_id" style="padding:8px;border:1px solid #ddd;border-radius:4px"><option value="0">Oda Sec</option>
+      {% for r in rooms %}<option value="{{ r.id }}">Oda {{ r.room_number }}</option>{% endfor %}</select>
+      <textarea name="items" rows="2" placeholder="Siparis detayi (ornek: 2x Kahvalti, 1x Cay)" required style="padding:8px;border:1px solid #ddd;border-radius:4px"></textarea>
+      <div style="display:flex;gap:8px"><input type="number" name="total" placeholder="Toplam TL" step="0.01" style="flex:1;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <button type="submit" class="btn btn-primary" style="width:auto">Gonder</button></div>
+    </form>
+    <h3 style="margin:16px 0 8px">Siparisler</h3>
+    <table><tr><th>Siparis</th><th>Oda</th><th>Tutar</th><th>Durum</th><th></th></tr>
+    {% for o in orders %}<tr><td>{{ o.items[:40] }}</td>
+    <td>{{ rooms[o.room_id].room_number if rooms[o.room_id] else '-' }}</td>
+    <td>{{ o.total }}TL</td>
+    <td><span class="badge badge-{{ 'green' if o.status=='done' else 'orange' }}">{{ o.status }}</span></td>
+    <td>{% if o.status!='done' %}<form method="POST" action="/restaurant/order/{{ o.id }}/done" style="display:inline"><button style="padding:4px 8px;background:#e8f5e9;border:none;border-radius:4px;cursor:pointer">Hazir</button></form>{% endif %}</td></tr>
+    {% else %}<tr><td colspan="5" class="empty">Siparis yok</td></tr>{% endfor %}</table>
+  </div>
+</div>
+{% endblock %}

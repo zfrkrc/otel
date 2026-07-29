@@ -1,0 +1,21 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Müsaitlik Takvimi</h2>
+<div id="calendar" style="background:#fff;border-radius:8px;padding:16px;min-height:300px">
+  <div style="text-align:center;padding:40px;color:#888">Takvim yukleniyor...</div>
+</div>
+<script>
+fetch('/api/availability')
+  .then(r=>r.json()).then(d=>{
+    var html='<div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap">';
+    d.days.forEach(function(day){
+      var color=day.available==d.total_rooms?'#e8f5e9':day.available>0?'#fff3e0':'#fef2f2';
+      html+='<div style="background:'+color+';padding:8px 12px;border-radius:6px;text-align:center;min-width:80px">';
+      html+='<div style="font-size:11px;color:#888">'+day.date.slice(-5)+'</div>';
+      html+='<div style="font-weight:600;font-size:14px">'+day.available+'/'+day.total+'</div>';
+      html+='<div style="font-size:10px;color:#888">musait</div></div>';
+    });
+    html+='</div>';
+    document.getElementById('calendar').innerHTML=html;
+  });
+</script>
+{% endblock %}

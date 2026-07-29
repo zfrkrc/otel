@@ -1,0 +1,53 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Odalar</h2>
+
+{% if request.query_params.get('success') %}
+<div style="background:#e8f5e9;color:#2e7d32;padding:10px 14px;border-radius:6px;margin-bottom:16px">{{ request.query_params.get('success') }}</div>
+{% endif %}
+{% if request.query_params.get('error') %}
+<div style="background:#fef2f2;color:#c62828;padding:10px 14px;border-radius:6px;margin-bottom:16px">{{ request.query_params.get('error') }}</div>
+{% endif %}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+  <div class="card">
+    <h3 style="margin-bottom:8px;font-size:14px">Toplu Oda Olustur</h3>
+    <form method="POST" action="/rooms/bulk" style="display:flex;gap:6px;flex-wrap:wrap">
+      <input type="text" name="prefix" placeholder="On ek (ornek: K)" value="" style="width:60px;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <input type="number" name="start" placeholder="Baslangic" required style="width:90px;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <input type="number" name="end" placeholder="Bitis" required style="width:90px;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <select name="room_type_id" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+        <option value="0">Tip Sec</option>
+        {% for t in types %}<option value="{{ t.id }}">{{ t.name }}</option>{% endfor %}
+      </select>
+      <input type="number" name="floor" placeholder="Kat" style="width:60px;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <button type="submit" class="btn btn-primary" style="width:auto">Toplu Olustur</button>
+    </form>
+    <div style="font-size:11px;color:#888;margin-top:6px">Ornek: K, 101, 200 -> K101, K102... K200 (max 500)</div>
+  </div>
+  <div class="card">
+    <h3 style="margin-bottom:8px;font-size:14px">Tekli Oda Ekle</h3>
+    <form method="POST" action="/rooms/new" style="display:flex;gap:6px;flex-wrap:wrap">
+      <input type="text" name="room_number" placeholder="Oda No" required style="flex:1;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <select name="room_type_id" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+        <option value="0">Tip Sec</option>
+        {% for t in types %}<option value="{{ t.id }}">{{ t.name }}</option>{% endfor %}
+      </select>
+      <input type="number" name="floor" placeholder="Kat" style="width:70px;padding:8px;border:1px solid #ddd;border-radius:4px">
+      <button type="submit" class="btn btn-primary" style="width:auto">Ekle</button>
+    </form>
+  </div>
+</div>
+
+<div class="card">
+  <table><tr><th>Oda</th><th>Tip</th><th>Fiyat</th><th>Kat</th><th>Durum</th><th></th></tr>
+    {% for r in rooms %}
+    <tr><td>{{ r.room_number }}</td>
+    <td>{{ r.room_type.name if r.room_type else '-' }}</td>
+    <td>{{ '%.0f'|format(r.room_type.base_price) if r.room_type else '-' }}TL</td>
+    <td>{{ r.floor or '-' }}</td>
+    <td><span class="badge badge-green">{{ r.status }}</span></td>
+    <td><form method="POST" action="/rooms/{{ r.id }}/delete" style="display:inline"><button style="background:none;border:none;color:#c62828;cursor:pointer">Sil</button></form></td></tr>
+    {% else %}<tr><td colspan="6" class="empty">Henuz oda yok. Toplu olusturma ile hemen ekleyin!</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

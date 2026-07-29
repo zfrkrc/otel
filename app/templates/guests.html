@@ -1,0 +1,20 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Musteriler</h2>
+<form method="POST" action="/guests/new" style="display:flex;gap:8px;flex-wrap:wrap;background:#fff;padding:16px;border-radius:8px;margin-bottom:20px">
+  <input type="text" name="first_name" placeholder="Ad" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="text" name="last_name" placeholder="Soyad" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="email" name="email" placeholder="E-posta" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="text" name="phone" placeholder="Telefon" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <input type="text" name="id_card" placeholder="TC/Passaport" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <button type="submit" class="btn btn-primary" style="width:auto">Ekle</button>
+</form>
+<div style="background:#fff;border-radius:8px;padding:16px">
+  <table style="width:100%;border-collapse:collapse">
+    <tr><th>Ad Soyad</th><th>E-posta</th><th>Telefon</th><th>TC</th><th>Ziyaret</th></tr>
+    {% for g in guests %}
+    <tr><td>{{ g.first_name }} {{ g.last_name }}</td>
+    <td>{{ g.email or '-' }}</td><td>{{ g.phone or '-' }}</td><td>{{ g.id_card or '-' }}</td><td>{{ g.total_visits }}</td></tr>
+    {% else %}<tr><td colspan="5" class="empty">Henuz musteri yok</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

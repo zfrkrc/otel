@@ -1,0 +1,16 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>AI Otel Asistani</h2>
+<p style="color:#888;margin-bottom:16px">Otel yonetimi hakkinda sorularina cevap al.</p>
+<div style="background:#fff;border-radius:8px;padding:20px;margin-bottom:16px">
+  <form method="POST" action="/ai/assistant">
+    <textarea name="prompt" rows="4" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:14px;font-family:inherit;margin-bottom:12px" placeholder="Ornek: Doluluk oranimi nasil artirabilirim?">{{ prompt }}</textarea>
+    <button type="submit" class="btn btn-primary" style="width:auto">Sor</button>
+  </form>
+</div>
+{% if result %}
+<div style="background:#fff;border-radius:8px;padding:20px;border-left:4px solid #1a5276">
+  <h3 style="font-size:15px;margin-bottom:8px;color:#1a5276">AI Cevabi</h3>
+  <div style="font-size:14px;line-height:1.7;color:#444">{{ result | replace('\n', '<br>') | safe }}</div>
+</div>
+{% endif %}
+{% endblock %}

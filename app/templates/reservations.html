@@ -1,0 +1,26 @@
+{% extends "dashboard.html" %}{% block content %}
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+  <h2>Rezervasyonlar</h2>
+  <a href="/reservations/new" class="btn btn-primary" style="text-decoration:none;width:auto">+ Yeni</a>
+</div>
+<div style="background:#fff;border-radius:8px;padding:16px">
+  <table style="width:100%;border-collapse:collapse">
+    <tr><th>Musteri</th><th>Oda</th><th>Giris</th><th>Cikis</th><th>Tutar</th><th>Durum</th><th></th></tr>
+    {% for r in reservations %}
+    <tr><td style="padding:10px;border-bottom:1px solid #edf2f7">{{ guests[r.guest_id].first_name if guests[r.guest_id] else '?' }} {{ guests[r.guest_id].last_name if guests[r.guest_id] else '' }}</td>
+    <td>{{ rooms[r.room_id].room_number if rooms[r.room_id] else '?' }}</td>
+    <td>{{ r.check_in }}</td><td>{{ r.check_out }}</td>
+    <td>{{ '%.0f'|format(r.total_amount or 0) }}</td>
+    <td><span class="badge badge-{% if r.status == 'confirmed' %}blue{% elif r.status == 'checked_in' %}green{% elif r.status == 'checked_out' %}orange{% else %}red{% endif %}">{{ r.status }}</span></td>
+    <td><form method="POST" action="/reservations/{{ r.id }}/status" style="display:inline">
+      <select name="status" onchange="this.form.submit()" style="padding:4px;border:1px solid #ddd;border-radius:4px;font-size:12px">
+        <option value="confirmed" {{'selected' if r.status=='confirmed'}}>Onaylandi</option>
+        <option value="checked_in" {{'selected' if r.status=='checked_in'}}>Giris Yapildi</option>
+        <option value="checked_out" {{'selected' if r.status=='checked_out'}}>Cikis Yapildi</option>
+        <option value="cancelled" {{'selected' if r.status=='cancelled'}}>Iptal</option>
+      </select>
+    </form></td></tr>
+    {% else %}<tr><td colspan="7" class="empty">Henuz rezervasyon yok</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

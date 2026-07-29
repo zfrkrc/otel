@@ -1,0 +1,24 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Faturalar</h2>
+<form method="POST" action="/invoices/new" style="display:flex;gap:8px;flex-wrap:wrap;background:#fff;padding:16px;border-radius:8px;margin-bottom:20px">
+  <select name="guest_id" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+    {% for g in guests %}<option value="{{ g.id }}">{{ g.first_name }} {{ g.last_name }}</option>{% endfor %}
+  </select>
+  <input type="number" name="amount" placeholder="Tutar" step="0.01" required style="padding:8px;border:1px solid #ddd;border-radius:4px">
+  <select name="payment_method" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+    <option value="cash">Nakit</option><option value="card">Kart</option><option value="transfer">Havale</option>
+  </select>
+  <button type="submit" class="btn btn-primary" style="width:auto">Fatura Kes</button>
+</form>
+<div style="background:#fff;border-radius:8px;padding:16px">
+  <table style="width:100%;border-collapse:collapse">
+    <tr><th>Fatura No</th><th>Musteri</th><th>Tutar</th><th>Odeme</th><th>Durum</th><th>Tarih</th></tr>
+    {% for i in invoices %}
+    <tr><td>{{ i.invoice_no }}</td><td>{{ guests[i.guest_id].first_name if guests[i.guest_id] else '?' }}</td>
+    <td>{{ '%.0f'|format(i.total) }}</td><td>{{ i.payment_method }}</td>
+    <td><span class="badge badge-green">{{ i.status }}</span></td>
+    <td>{{ i.created_at.strftime('%d.%m.%Y') if i.created_at else '' }}</td></tr>
+    {% else %}<tr><td colspan="6" class="empty">Henuz fatura yok</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

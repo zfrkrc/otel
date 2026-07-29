@@ -1,0 +1,23 @@
+{% extends "dashboard.html" %}{% block content %}
+<h2>Ariza & Sorun Takibi</h2>
+<form method="POST" action="/issues/new" style="display:flex;gap:8px;flex-wrap:wrap;background:#fff;padding:16px;border-radius:8px;margin-bottom:20px">
+  <input type="text" name="title" placeholder="Sorun" required style="flex:1;padding:8px;border:1px solid #ddd;border-radius:4px">
+  <select name="room_id" style="padding:8px;border:1px solid #ddd;border-radius:4px"><option value="0">Oda Sec</option>
+    {% for r in rooms %}<option value="{{ r.id }}">Oda {{ r.room_number }}</option>{% endfor %}</select>
+  <select name="priority" style="padding:8px;border:1px solid #ddd;border-radius:4px">
+    <option value="low">Dusuk</option><option value="normal">Normal</option><option value="high">Yuksek</option><option value="critical">Acil</option>
+  </select>
+  <button type="submit" class="btn btn-primary" style="width:auto">Bildir</button>
+</form>
+<div style="background:#fff;border-radius:8px;padding:16px">
+  <table><tr><th>Tarih</th><th>Sorun</th><th>Oda</th><th>Oncelik</th><th>Durum</th><th></th></tr>
+    {% for i in issues %}
+    <tr><td style="font-size:11px">{{ i.created_at.strftime('%d.%m.%Y') if i.created_at else '' }}</td>
+    <td><strong>{{ i.title }}</strong></td><td>{{ rooms[i.room_id].room_number if rooms[i.room_id] else '-' }}</td>
+    <td><span class="badge badge-{% if i.priority=='critical' %}red{% elif i.priority=='high' %}orange{% else %}blue{% endif %}">{{ i.priority }}</span></td>
+    <td><span class="badge badge-{{ 'green' if i.status=='resolved' else 'orange' }}">{{ i.status }}</span></td>
+    <td>{% if i.status=='open' %}<form method="POST" action="/issues/{{ i.id }}/resolve" style="display:inline"><button style="padding:4px 8px;background:#e8f5e9;border:none;border-radius:4px;cursor:pointer">Cozuldu</button></form>{% endif %}</td></tr>
+    {% else %}<tr><td colspan="6" class="empty">Kayitli sorun yok</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}
