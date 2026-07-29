@@ -1,0 +1,1621 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "otel",
+    "is_monorepo": false,
+    "total_files": 30,
+    "entry_points": [
+      "app/main.py"
+    ],
+    "tech_stack": [
+      {
+        "name": "Docker",
+        "version": null,
+        "category": "infra"
+      },
+      {
+        "name": "Docker Compose",
+        "version": null,
+        "category": "infra"
+      }
+    ],
+    "entry_candidates": [
+      "app/main.py"
+    ],
+    "graph_mode": "flow"
+  },
+  "nodes": [
+    {
+      "id": "class:app/config.py:Config",
+      "type": "class",
+      "filePath": "app/config.py",
+      "name": "Config",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/config.py:Settings",
+      "type": "class",
+      "filePath": "app/config.py",
+      "name": "Settings",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/database.py:Base",
+      "type": "class",
+      "filePath": "app/database.py",
+      "name": "Base",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/guest.py:Guest",
+      "type": "class",
+      "filePath": "app/models/guest.py",
+      "name": "Guest",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/hotel.py:Hotel",
+      "type": "class",
+      "filePath": "app/models/hotel.py",
+      "name": "Hotel",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/hotel.py:HotelIssue",
+      "type": "class",
+      "filePath": "app/models/hotel.py",
+      "name": "HotelIssue",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/hotel.py:HousekeepingTask",
+      "type": "class",
+      "filePath": "app/models/hotel.py",
+      "name": "HousekeepingTask",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/hotel.py:MenuItem",
+      "type": "class",
+      "filePath": "app/models/hotel.py",
+      "name": "MenuItem",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/hotel.py:RestaurantOrder",
+      "type": "class",
+      "filePath": "app/models/hotel.py",
+      "name": "RestaurantOrder",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/room.py:Room",
+      "type": "class",
+      "filePath": "app/models/room.py",
+      "name": "Room",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/room.py:RoomType",
+      "type": "class",
+      "filePath": "app/models/room.py",
+      "name": "RoomType",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:app/models/room.py:SeasonalPrice",
+      "type": "class",
+      "filePath": "app/models/room.py",
+      "name": "SeasonalPrice",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "file:.claude/CLAUDE.md",
+      "type": "document",
+      "filePath": ".claude/CLAUDE.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 178,
+      "complexity": "moderate",
+      "pagerank": 0.013829,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Repository instructions and context for AI coding agents."
+    },
+    {
+      "id": "file:.github/workflows/test.yml",
+      "type": "pipeline",
+      "filePath": ".github/workflows/test.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.013829,
+      "communityId": 4,
+      "tags": [
+        "config",
+        "ci"
+      ],
+      "summary": "GitHub Actions CI/CD workflow definition."
+    },
+    {
+      "id": "file:.mcp.json",
+      "type": "config",
+      "filePath": ".mcp.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 7,
+      "complexity": "simple",
+      "pagerank": 0.013829,
+      "communityId": 5,
+      "tags": [
+        "config"
+      ],
+      "summary": "Configuration file: .mcp.json."
+    },
+    {
+      "id": "file:Dockerfile",
+      "type": "service",
+      "filePath": "Dockerfile",
+      "language": "dockerfile",
+      "symbolCount": 2,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.013829,
+      "communityId": 6,
+      "tags": [
+        "config",
+        "infra"
+      ],
+      "summary": "Container image build definition."
+    },
+    {
+      "id": "file:app/config.py",
+      "type": "file",
+      "filePath": "app/config.py",
+      "language": "python",
+      "symbolCount": 3,
+      "lineCount": 10,
+      "complexity": "simple",
+      "pagerank": 0.227908,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module config defining Settings, Config, get_settings.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/database.py",
+      "type": "file",
+      "filePath": "app/database.py",
+      "language": "python",
+      "symbolCount": 6,
+      "lineCount": 23,
+      "complexity": "moderate",
+      "pagerank": 0.227325,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module database defining Base, get_session_maker, init_db.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/main.py",
+      "type": "file",
+      "filePath": "app/main.py",
+      "language": "python",
+      "symbolCount": 6,
+      "lineCount": 35,
+      "complexity": "moderate",
+      "pagerank": 0.013829,
+      "communityId": 1,
+      "tags": [
+        "entry_point"
+      ],
+      "summary": "Application module main defining lifespan, root, health.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/__init__.py",
+      "type": "file",
+      "filePath": "app/models/__init__.py",
+      "language": "python",
+      "symbolCount": 1,
+      "lineCount": 14,
+      "complexity": "simple",
+      "pagerank": 0.013829,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Data module __init__ (1 symbols).",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/guest.py",
+      "type": "file",
+      "filePath": "app/models/guest.py",
+      "language": "python",
+      "symbolCount": 1,
+      "lineCount": 21,
+      "complexity": "simple",
+      "pagerank": 0.028399,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Data module guest defining Guest.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/hotel.py",
+      "type": "file",
+      "filePath": "app/models/hotel.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 76,
+      "complexity": "moderate",
+      "pagerank": 0.045626,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module hotel defining Hotel, HousekeepingTask, RestaurantOrder.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/inventory.py",
+      "type": "file",
+      "filePath": "app/models/inventory.py",
+      "language": "python",
+      "symbolCount": 1,
+      "lineCount": 19,
+      "complexity": "simple",
+      "pagerank": 0.020972,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Data module inventory defining InventoryItem.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/invoice.py",
+      "type": "file",
+      "filePath": "app/models/invoice.py",
+      "language": "python",
+      "symbolCount": 1,
+      "lineCount": 23,
+      "complexity": "simple",
+      "pagerank": 0.019321,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Data module invoice defining Invoice.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/reservation.py",
+      "type": "file",
+      "filePath": "app/models/reservation.py",
+      "language": "python",
+      "symbolCount": 1,
+      "lineCount": 24,
+      "complexity": "simple",
+      "pagerank": 0.021797,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Data module reservation defining Reservation.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/room.py",
+      "type": "file",
+      "filePath": "app/models/room.py",
+      "language": "python",
+      "symbolCount": 3,
+      "lineCount": 39,
+      "complexity": "simple",
+      "pagerank": 0.036239,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module room defining RoomType, Room, SeasonalPrice.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/models/staff.py",
+      "type": "file",
+      "filePath": "app/models/staff.py",
+      "language": "python",
+      "symbolCount": 1,
+      "lineCount": 18,
+      "complexity": "simple",
+      "pagerank": 0.015298,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Data module staff defining Staff.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/__init__.py",
+      "type": "file",
+      "filePath": "app/routers/__init__.py",
+      "language": "python",
+      "symbolCount": 0,
+      "lineCount": 0,
+      "complexity": "simple",
+      "pagerank": 0.014563,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module __init__.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/ai.py",
+      "type": "file",
+      "filePath": "app/routers/ai.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 43,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module ai defining ai_page, ai_ask.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/analytics.py",
+      "type": "file",
+      "filePath": "app/routers/analytics.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 88,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module analytics defining calendar_view, availability_api, stats_api.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/auth.py",
+      "type": "file",
+      "filePath": "app/routers/auth.py",
+      "language": "python",
+      "symbolCount": 8,
+      "lineCount": 59,
+      "complexity": "moderate",
+      "pagerank": 0.07099,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module auth defining create_token, decode_token, get_current_user.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/dashboard.py",
+      "type": "file",
+      "filePath": "app/routers/dashboard.py",
+      "language": "python",
+      "symbolCount": 3,
+      "lineCount": 14,
+      "complexity": "simple",
+      "pagerank": 0.014563,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module dashboard defining dashboard.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/guests.py",
+      "type": "file",
+      "filePath": "app/routers/guests.py",
+      "language": "python",
+      "symbolCount": 4,
+      "lineCount": 36,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module guests defining guest_list, guest_create.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/housekeeping.py",
+      "type": "file",
+      "filePath": "app/routers/housekeeping.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 55,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 2,
+      "tags": [],
+      "summary": "API module housekeeping defining hk_list, hk_create, hk_done.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/inventory.py",
+      "type": "file",
+      "filePath": "app/routers/inventory.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 52,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module inventory defining inventory_list, inventory_create, inventory_update.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/invoices.py",
+      "type": "file",
+      "filePath": "app/routers/invoices.py",
+      "language": "python",
+      "symbolCount": 4,
+      "lineCount": 45,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module invoices defining invoice_list, invoice_create.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/issues.py",
+      "type": "file",
+      "filePath": "app/routers/issues.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 53,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 2,
+      "tags": [],
+      "summary": "API module issues defining issue_list, issue_create, issue_resolve.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/pricing.py",
+      "type": "file",
+      "filePath": "app/routers/pricing.py",
+      "language": "python",
+      "symbolCount": 5,
+      "lineCount": 52,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module pricing defining pricing_list, pricing_create, pricing_delete.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/reservations.py",
+      "type": "file",
+      "filePath": "app/routers/reservations.py",
+      "language": "python",
+      "symbolCount": 6,
+      "lineCount": 75,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module reservations defining reservation_list, reservation_new_form, reservation_create.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/restaurant.py",
+      "type": "file",
+      "filePath": "app/routers/restaurant.py",
+      "language": "python",
+      "symbolCount": 7,
+      "lineCount": 81,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 2,
+      "tags": [],
+      "summary": "API module restaurant defining restaurant_page, menu_add, order_create.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:app/routers/rooms.py",
+      "type": "file",
+      "filePath": "app/routers/rooms.py",
+      "language": "python",
+      "symbolCount": 7,
+      "lineCount": 91,
+      "complexity": "moderate",
+      "pagerank": 0.014563,
+      "communityId": 1,
+      "tags": [],
+      "summary": "API module rooms defining room_list, type_create, room_create.",
+      "primaryOwner": "zafer"
+    },
+    {
+      "id": "file:docker-compose.yml",
+      "type": "service",
+      "filePath": "docker-compose.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 18,
+      "complexity": "simple",
+      "pagerank": 0.013829,
+      "communityId": 7,
+      "tags": [
+        "config",
+        "infra"
+      ],
+      "summary": "Multi-container service orchestration for local development."
+    },
+    {
+      "id": "function:app/config.py:get_settings",
+      "type": "function",
+      "filePath": "app/config.py",
+      "name": "get_settings",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/database.py:close_db",
+      "type": "function",
+      "filePath": "app/database.py",
+      "name": "close_db",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/database.py:get_session_maker",
+      "type": "function",
+      "filePath": "app/database.py",
+      "name": "get_session_maker",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/database.py:init_db",
+      "type": "function",
+      "filePath": "app/database.py",
+      "name": "init_db",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/routers/auth.py:create_token",
+      "type": "function",
+      "filePath": "app/routers/auth.py",
+      "name": "create_token",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/routers/auth.py:decode_token",
+      "type": "function",
+      "filePath": "app/routers/auth.py",
+      "name": "decode_token",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/routers/auth.py:get_current_user",
+      "type": "function",
+      "filePath": "app/routers/auth.py",
+      "name": "get_current_user",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/routers/auth.py:login",
+      "type": "function",
+      "filePath": "app/routers/auth.py",
+      "name": "login",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/routers/auth.py:login_page",
+      "type": "function",
+      "filePath": "app/routers/auth.py",
+      "name": "login_page",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:app/routers/auth.py:logout",
+      "type": "function",
+      "filePath": "app/routers/auth.py",
+      "name": "logout",
+      "language": "python",
+      "tags": [],
+      "summary": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/config.py",
+      "target": "class:app/config.py:Config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/config.py",
+      "target": "class:app/config.py:Settings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/config.py",
+      "target": "function:app/config.py:get_settings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/database.py",
+      "target": "class:app/database.py:Base",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/database.py",
+      "target": "file:app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/database.py",
+      "target": "function:app/database.py:close_db",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/database.py",
+      "target": "function:app/database.py:get_session_maker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/database.py",
+      "target": "function:app/database.py:init_db",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/ai.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/analytics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/dashboard.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/guests.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/housekeeping.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/inventory.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/invoices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/issues.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/pricing.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/reservations.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/restaurant.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/main.py",
+      "target": "file:app/routers/rooms.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/guest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/hotel.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/inventory.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/invoice.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/reservation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/__init__.py",
+      "target": "file:app/models/staff.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/guest.py",
+      "target": "class:app/models/guest.py:Guest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/guest.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/hotel.py",
+      "target": "class:app/models/hotel.py:Hotel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/hotel.py",
+      "target": "class:app/models/hotel.py:HotelIssue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/hotel.py",
+      "target": "class:app/models/hotel.py:HousekeepingTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/hotel.py",
+      "target": "class:app/models/hotel.py:MenuItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/hotel.py",
+      "target": "class:app/models/hotel.py:RestaurantOrder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/hotel.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/inventory.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/invoice.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/reservation.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/room.py",
+      "target": "class:app/models/room.py:Room",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/room.py",
+      "target": "class:app/models/room.py:RoomType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/room.py",
+      "target": "class:app/models/room.py:SeasonalPrice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/room.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/models/staff.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/ai.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/models/guest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/models/hotel.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/models/inventory.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/models/invoice.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/models/reservation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/analytics.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "file:app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "file:app/models/hotel.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "function:app/routers/auth.py:create_token",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "function:app/routers/auth.py:decode_token",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "function:app/routers/auth.py:get_current_user",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "function:app/routers/auth.py:login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "function:app/routers/auth.py:login_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/auth.py",
+      "target": "function:app/routers/auth.py:logout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/dashboard.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/guests.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/guests.py",
+      "target": "file:app/models/guest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/guests.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/housekeeping.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/housekeeping.py",
+      "target": "file:app/models/hotel.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/housekeeping.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/housekeeping.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/inventory.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/inventory.py",
+      "target": "file:app/models/inventory.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/inventory.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/invoices.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/invoices.py",
+      "target": "file:app/models/guest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/invoices.py",
+      "target": "file:app/models/invoice.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/invoices.py",
+      "target": "file:app/models/reservation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/invoices.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/issues.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/issues.py",
+      "target": "file:app/models/hotel.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/issues.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/issues.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/pricing.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/pricing.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/pricing.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/reservations.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/reservations.py",
+      "target": "file:app/models/guest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/reservations.py",
+      "target": "file:app/models/reservation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/reservations.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/reservations.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/restaurant.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/restaurant.py",
+      "target": "file:app/models/guest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/restaurant.py",
+      "target": "file:app/models/hotel.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/restaurant.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/restaurant.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/rooms.py",
+      "target": "file:app/database.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/rooms.py",
+      "target": "file:app/models/room.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/routers/rooms.py",
+      "target": "file:app/routers/auth.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:api",
+      "name": "API",
+      "description": "",
+      "nodeIds": [
+        "file:app/routers/__init__.py",
+        "file:app/routers/ai.py",
+        "file:app/routers/analytics.py",
+        "file:app/routers/auth.py",
+        "file:app/routers/dashboard.py",
+        "file:app/routers/guests.py",
+        "file:app/routers/housekeeping.py",
+        "file:app/routers/inventory.py",
+        "file:app/routers/invoices.py",
+        "file:app/routers/issues.py",
+        "file:app/routers/pricing.py",
+        "file:app/routers/reservations.py",
+        "file:app/routers/restaurant.py",
+        "file:app/routers/rooms.py"
+      ],
+      "display_order": 0,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:config",
+      "name": "Config",
+      "description": "",
+      "nodeIds": [
+        "file:.claude/CLAUDE.md",
+        "file:.github/workflows/test.yml"
+      ],
+      "display_order": 1,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:application",
+      "name": "Application",
+      "description": "",
+      "nodeIds": [
+        "file:.mcp.json",
+        "file:Dockerfile",
+        "file:app/config.py",
+        "file:app/database.py",
+        "file:app/main.py",
+        "file:docker-compose.yml"
+      ],
+      "display_order": 2,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:data",
+      "name": "Data",
+      "description": "",
+      "nodeIds": [
+        "file:app/models/__init__.py",
+        "file:app/models/guest.py",
+        "file:app/models/hotel.py",
+        "file:app/models/inventory.py",
+        "file:app/models/invoice.py",
+        "file:app/models/reservation.py",
+        "file:app/models/room.py",
+        "file:app/models/staff.py"
+      ],
+      "display_order": 3,
+      "order_basis": "imports"
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "target_path": "otel",
+      "page_type": "repo_overview",
+      "title": "Repository Overview",
+      "depth": 0,
+      "kind": "overview",
+      "reason": "Start here for the end-to-end picture before diving into the code.",
+      "layer_id": null
+    },
+    {
+      "order": 2,
+      "target_path": "app/main.py",
+      "page_type": "file_page",
+      "title": "main.py",
+      "depth": 0,
+      "kind": "code",
+      "reason": "An entry point \u2014 execution and imports fan out from here.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 3,
+      "target_path": "app/config.py",
+      "page_type": "file_page",
+      "title": "config.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 4,
+      "target_path": "app/database.py",
+      "page_type": "file_page",
+      "title": "database.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 5,
+      "target_path": "app/routers/auth.py",
+      "page_type": "file_page",
+      "title": "auth.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 6,
+      "target_path": "app/routers/__init__.py",
+      "page_type": "file_page",
+      "title": "__init__.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 7,
+      "target_path": "app/routers/ai.py",
+      "page_type": "file_page",
+      "title": "ai.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 8,
+      "target_path": "app/routers/analytics.py",
+      "page_type": "file_page",
+      "title": "analytics.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 9,
+      "target_path": "app/routers/dashboard.py",
+      "page_type": "file_page",
+      "title": "dashboard.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 10,
+      "target_path": "app/routers/guests.py",
+      "page_type": "file_page",
+      "title": "guests.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 11,
+      "target_path": "app/routers/housekeeping.py",
+      "page_type": "file_page",
+      "title": "housekeeping.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api"
+    },
+    {
+      "order": 12,
+      "target_path": "app/models/hotel.py",
+      "page_type": "file_page",
+      "title": "hotel.py",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Data layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:data"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module:app-routers",
+      "name": "API",
+      "path": "app/routers",
+      "layerId": "layer:api",
+      "nodeIds": [
+        "file:app/routers/__init__.py",
+        "file:app/routers/ai.py",
+        "file:app/routers/analytics.py",
+        "file:app/routers/auth.py",
+        "file:app/routers/dashboard.py",
+        "file:app/routers/guests.py",
+        "file:app/routers/housekeeping.py",
+        "file:app/routers/inventory.py",
+        "file:app/routers/invoices.py",
+        "file:app/routers/issues.py",
+        "file:app/routers/pricing.py",
+        "file:app/routers/reservations.py",
+        "file:app/routers/restaurant.py",
+        "file:app/routers/rooms.py"
+      ],
+      "wholeLayer": true,
+      "language": "python"
+    },
+    {
+      "id": "module:application",
+      "name": "Application",
+      "path": "",
+      "layerId": "layer:application",
+      "nodeIds": [
+        "file:.mcp.json",
+        "file:Dockerfile",
+        "file:app/config.py",
+        "file:app/database.py",
+        "file:app/main.py",
+        "file:docker-compose.yml"
+      ],
+      "wholeLayer": true,
+      "language": "python"
+    },
+    {
+      "id": "module:app-models",
+      "name": "Data",
+      "path": "app/models",
+      "layerId": "layer:data",
+      "nodeIds": [
+        "file:app/models/__init__.py",
+        "file:app/models/guest.py",
+        "file:app/models/hotel.py",
+        "file:app/models/inventory.py",
+        "file:app/models/invoice.py",
+        "file:app/models/reservation.py",
+        "file:app/models/room.py",
+        "file:app/models/staff.py"
+      ],
+      "wholeLayer": true,
+      "language": "python"
+    }
+  ]
+}
