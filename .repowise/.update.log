@@ -1,4 +1,0 @@
-
---- post-commit hook fired at Çrş 29 Tem 2026 09:19:51 +03 for HEAD 458f16bf8761a0815daf072615a3d63557f989f8 ---
-Error: No previous sync found for /home/zfrkrc/yeniproje/otel. Run 'repowise init' there first, or pass --since <ref>.
-A workspace was detected at /home/zfrkrc/yeniproje. Did you mean: repowise update --workspace?

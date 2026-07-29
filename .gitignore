@@ -7,3 +7,7 @@ __pycache__/
 *.sqlite-wal
 .coverage
 htmlcov/
+.repowise/
+.vscode/
+.claude/
+.mcp.json
