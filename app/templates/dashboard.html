@@ -3,56 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2'><path d='M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6'/></svg>">
   <title>OtelSaaS</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box }
-    body { font-family: -apple-system, sans-serif; background: #f5f7fa; color: #333; }
-    .nav { background:#1a5276; color:#fff; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; }
-    .nav h1 { font-size:18px; }
-    .nav a { color:#fff; text-decoration:none; font-size:13px; opacity:.8; }
-    .nav a:hover { opacity:1; }
-    .page { padding:24px; max-width:1000px; margin:0 auto; }
-    h2 { margin-bottom:20px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding:8px 16px; border-radius:6px; font-size:13px; font-weight:500; border:none; cursor:pointer; text-decoration:none; }
-    .btn-primary { background:#1a5276; color:#fff; }
-    .btn-primary:hover { background:#154360; }
-    table { width:100%; border-collapse:collapse; }
-    th { background:#f8fafb; padding:10px; text-align:left; font-size:13px; color:#555; font-weight:600; border-bottom:2px solid #edf2f7; }
-    td { padding:10px; border-bottom:1px solid #edf2f7; font-size:13px; }
-    input, select, textarea { font-family:inherit; font-size:13px; }
-    .card { background:#fff; border-radius:8px; padding:16px; margin-bottom:16px; }
-    .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:12px; }
-    .badge-green { background:#e8f5e9; color:#2e7d32; }
-    .badge-blue { background:#e3f2fd; color:#1565c0; }
-    .badge-orange { background:#fff3e0; color:#e65100; }
-    .badge-red { background:#fef2f2; color:#c62828; }
-    .empty { text-align:center; padding:40px; color:#888; }
-    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:20px; }
-    .stat-card { background:#fff; border-radius:8px; padding:16px; text-align:center; }
-    .stat-num { font-size:24px; font-weight:700; color:#1a5276; }
-    .stat-label { font-size:12px; color:#888; margin-top:4px; }
-    .menu { display:grid; grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); gap:10px; }
-    .menu-item { background:#fff; border-radius:8px; padding:16px; text-align:center; text-decoration:none; color:#333; border:1px solid #edf2f7; }
-    .menu-item:hover { border-color:#1a5276; }
-    .menu-icon { font-size:24px; margin-bottom:6px; }
-    .menu-label { font-size:12px; font-weight:500; }
-  </style>
+  <link rel="stylesheet" href="/static/css/otel.css">
 </head>
 <body>
   <nav class="nav">
-    <h1>OtelSaaS</h1>
-    <div>
-      <a href="/dashboard" style="margin-right:16px">Panel</a>
-      <span style="font-size:13px;opacity:.8">{{ user.email }}</span>
-      <a href="/auth/logout" style="margin-left:16px">Cikis</a>
+    <h1><span class="brand-dot"></span>OtelSaaS</h1>
+    <div class="nav-links">
+      <a href="/dashboard">Panel</a>
+      <span class="user-name">{{ user.email }}</span>
+      <a href="/auth/logout" class="logout">Çıkış</a>
     </div>
   </nav>
   <div class="page">
   {% block content %}
-    <h2>Yonetim Paneli</h2>
+    <h2>Yönetim Paneli</h2>
     <div class="stats" id="stats">
       <div class="stat-card"><div class="stat-num">...</div><div class="stat-label">Aktif Rezervasyon</div></div>
-      <div class="stat-card"><div class="stat-num">...</div><div class="stat-label">Musteri</div></div>
+      <div class="stat-card"><div class="stat-num">...</div><div class="stat-label">Müşteri</div></div>
       <div class="stat-card"><div class="stat-num">...</div><div class="stat-label">Oda</div></div>
       <div class="stat-card"><div class="stat-num">...</div><div class="stat-label">Ciro</div></div>
       <div class="stat-card"><div class="stat-num">...</div><div class="stat-label">Kritik Stok</div></div>
@@ -63,17 +32,17 @@
       <a href="/rooms" class="menu-item"><div class="menu-icon">🛏️</div><div class="menu-label">Odalar</div></a>
       <a href="/pricing" class="menu-item"><div class="menu-icon">💰</div><div class="menu-label">Fiyatlama</div></a>
       <a href="/reservations" class="menu-item"><div class="menu-icon">📅</div><div class="menu-label">Rezervasyonlar</div></a>
-      <a href="/guests" class="menu-item"><div class="menu-icon">👤</div><div class="menu-label">Musteriler</div></a>
+      <a href="/guests" class="menu-item"><div class="menu-icon">👤</div><div class="menu-label">Müşteriler</div></a>
       <a href="/invoices" class="menu-item"><div class="menu-icon">🧾</div><div class="menu-label">Faturalar</div></a>
       <a href="/housekeeping" class="menu-item"><div class="menu-icon">🧹</div><div class="menu-label">Kat Hizmetleri</div></a>
       <a href="/restaurant" class="menu-item"><div class="menu-icon">🍽️</div><div class="menu-label">Mutfak</div></a>
-      <a href="/issues" class="menu-item"><div class="menu-icon">🔧</div><div class="menu-label">Ariza Takip</div></a>
+      <a href="/issues" class="menu-item"><div class="menu-icon">🔧</div><div class="menu-label">Arıza Takip</div></a>
       <a href="/inventory" class="menu-item"><div class="menu-icon">📦</div><div class="menu-label">Depo/Stok</div></a>
       <a href="/ai/assistant" class="menu-item"><div class="menu-icon">🤖</div><div class="menu-label">AI Asistan</div></a>
     </div>
 <script>
 fetch('/api/stats').then(r=>r.json()).then(d=>{
-  var labels=['Aktif Rezervasyon','Musteri','Oda','Ciro','Kritik Stok','Temizlik'];
+  var labels=['Aktif Rezervasyon','Müşteri','Oda','Ciro','Kritik Stok','Temizlik'];
   var vals=[d.active_reservations,d.total_guests,d.total_rooms,d.revenue+'TL',d.low_stock,d.pending_housekeeping];
   var cards=document.getElementById('stats').querySelectorAll('.stat-num');
   cards.forEach(function(el,i){el.textContent=vals[i]||0;});
